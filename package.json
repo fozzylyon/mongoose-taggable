@@ -4,7 +4,7 @@
   "description": "Simple tagging plugin for Mongoose",
   "main": "index.js",
   "dependencies": {
-    "underscore": "latest"
+    "lodash": "latest"
   },
   "devDependencies": {
     "mongoose": "3.x.x",

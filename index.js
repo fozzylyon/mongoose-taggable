@@ -1,9 +1,9 @@
-var _ = require('underscore');
+var _ = require('lodash');
 
 
 /**
  * Mongoose plugin
- * 
+ *
  * Adds the ability to add and remove tags to a document, and find models filtered by tags.
  * Uses safe atomic updates to avoid race conditions.
  * Meant to be used in a similar way to GitHub Issue's 'labels' feature.
@@ -29,7 +29,7 @@ module.exports = function(schema, pluginOptions) {
 
   /**
    * Add a tag
-   * 
+   *
    * If a callback is passed, the change is made on the database (atomically).
    *
    * If no callback is passed, the change is made on the local (in memory) instance
@@ -51,7 +51,7 @@ module.exports = function(schema, pluginOptions) {
 
   /**
    * Remove a tag
-   * 
+   *
    * If a callback is passed, the change is made on the database (atomically).
    *
    * If no callback is passed, the change is made on the local (in memory) instance
@@ -139,7 +139,7 @@ module.exports = function(schema, pluginOptions) {
 
   /**
    * Add a tag to a document atomically on the database (async)
-   * 
+   *
    * NOTE: This method modifies the document on the database
    *
    * @param {Model} self      The model instance
@@ -198,7 +198,7 @@ module.exports = function(schema, pluginOptions) {
 
   /**
    * Remove a tag from a document atomically on the database (async)
-   * 
+   *
    * NOTE: This method modifies the document on the database
    *
    * @param {Model} self      The model instance

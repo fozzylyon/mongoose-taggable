@@ -2,7 +2,7 @@
 
 process.env.NODE_ENV = 'test';
 
-var _ = require('underscore'),
+var _ = require('lodash'),
     mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     fixtures = require('pow-mongodb-fixtures').connect('mongoose-taggable'),
@@ -271,7 +271,7 @@ exports['filterByTags'] = {
     query.exec(function(err, docs) {
       if (err) return test.done(err);
 
-      var titles = _.pluck(docs, 'title');      
+      var titles = _.pluck(docs, 'title');
 
       test.same(titles.join(' '), 'C F');
 
@@ -287,7 +287,7 @@ exports['filterByTags'] = {
     query.exec(function(err, docs) {
       if (err) return test.done(err);
 
-      var titles = _.pluck(docs, 'title');      
+      var titles = _.pluck(docs, 'title');
 
       test.same(titles.join(' '), 'A B C D E F');
 
